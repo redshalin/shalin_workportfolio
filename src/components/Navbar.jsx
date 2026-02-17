@@ -35,7 +35,7 @@ const Navbar = () => {
 
         {/* Desktop Resume Button */}
         <div className="mobile-hidden" style={{ textAlign: 'right' }}>
-          <a href="#contact" className="glow-btn" style={{ padding: '8px 24px', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+          <a href="/resume.pdf" download="Shalin_Sheth_Resume.pdf" className="glow-btn" style={{ padding: '8px 24px', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px' }}>
             Resume
           </a>
         </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
             <a href="#skills" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Skills</a>
             <a href="#experience" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Experience</a>
             <a href="#projects" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Projects</a>
-            <a href="#contact" onClick={() => setIsOpen(false)} className="glow-btn" style={{ textAlign: 'center' }}>Resume</a>
+            <a href="/resume.pdf" download="Shalin_Sheth_Resume.pdf" onClick={() => setIsOpen(false)} className="glow-btn" style={{ textAlign: 'center' }}>Resume</a>
           </div>
         </>
       )}
