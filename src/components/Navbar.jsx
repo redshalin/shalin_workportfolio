@@ -21,9 +21,9 @@ const Navbar = () => {
         alignItems: 'center',
         padding: '0 20px'
       }}>
-        <div style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--white)', letterSpacing: '-1px' }}>
+        <a href="#hero" style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--white)', letterSpacing: '-1px', textDecoration: 'none' }}>
           Shalin<span style={{ color: 'var(--primary)' }}>.</span>
-        </div>
+        </a>
         
         {/* Desktop Menu */}
         <div className="mobile-hidden" style={{ display: 'flex', gap: '35px', alignItems: 'center' }}>
@@ -51,28 +51,46 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Backdrop & Overlay */}
       {isOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          width: 'min(300px, 100vw)',
-          height: '100vh',
-          background: 'var(--bg-darker)',
-          padding: '80px 40px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '30px',
-          boxShadow: '-10px 0 30px rgba(2, 12, 27, 0.5)',
-          zIndex: 999
-        }}>
-          <a href="#about" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>About</a>
-          <a href="#skills" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Skills</a>
-          <a href="#experience" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Experience</a>
-          <a href="#projects" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Projects</a>
-          <a href="#contact" onClick={() => setIsOpen(false)} className="glow-btn" style={{ textAlign: 'center' }}>Resume</a>
-        </div>
+        <>
+          {/* Backdrop Overlay */}
+          <div 
+            onClick={() => setIsOpen(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              background: 'rgba(2, 12, 27, 0.7)',
+              backdropFilter: 'blur(4px)',
+              zIndex: 998
+            }}
+          />
+          
+          {/* Mobile Menu Sidebar */}
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            right: 0,
+            width: 'min(300px, 100vw)',
+            height: '100vh',
+            background: 'var(--bg-darker)',
+            padding: '80px 40px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '30px',
+            boxShadow: '-10px 0 30px rgba(2, 12, 27, 0.5)',
+            zIndex: 999
+          }}>
+            <a href="#about" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>About</a>
+            <a href="#skills" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Skills</a>
+            <a href="#experience" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Experience</a>
+            <a href="#projects" onClick={() => setIsOpen(false)} style={{ color: 'var(--primary)', fontSize: '18px' }}>Projects</a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="glow-btn" style={{ textAlign: 'center' }}>Resume</a>
+          </div>
+        </>
       )}
     </nav>
   );
